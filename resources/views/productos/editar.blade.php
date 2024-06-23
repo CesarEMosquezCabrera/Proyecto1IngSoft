@@ -1,8 +1,9 @@
-@extends('layout.plantilla')
+{{-- @extends('layout.plantilla')
 
 @section('titulo', 'editar')
 
-@section('contenido')
+@section('contenido') --}}
+<x-app-layout>
 
 {{-- <header class="bg-white shadow">
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
@@ -157,6 +158,18 @@
             <label for="categoria" class="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Inserte la categoria</label>
             {{-- <span class="text-sm text-red-600 hidden" id="error">La categoria es requerida</span> --}}
           </div>
+
+          
+          <div class="relative z-0 w-full mb-5">
+            <label class="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Edite la categoria</label>
+            <br>
+            <select name="categoria_id" class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+              <option value="{{$categoria_actual->id}}">{{$categoria_actual->nombre}}</option>
+              @foreach($categorias as $cat)
+                <option value="{{$cat->id}}">{{$cat->nombre}}</option>
+              @endforeach
+            </select>
+          </div>
   
         {{-- <div class="relative z-0 w-full mb-5">
           <select
@@ -251,4 +264,5 @@
     </form> --}}
 
 
-@endsection
+{{-- @endsection --}}
+<x-app-layout>

@@ -1,8 +1,9 @@
-@extends('layout.plantilla')
+<x-app-layout>
+{{-- @extends('layout.plantilla')
 
 @section('titulo', 'crear')
 
-@section('contenido')
+@section('contenido') --}}
 
     <!-- component -->
 <!-- Code on GiHub: https://github.com/vitalikda/form-floating-labels-tailwindcss -->
@@ -86,6 +87,22 @@
             />
             <label for="categoria" class="absolute duration-300 top-3 -z-1 origin-0 text-gray-500">Inserte la categoria</label>
             {{-- <span class="text-sm text-red-600 hidden" id="error">La categoria es requerida</span> --}}
+          </div>
+
+          <div class="relative z-0 w-full mb-5">
+            <label class="absolute duration-300 top-3 -z-1 origin-0 text-black-500">Inserte categoria de tabla
+              <select name="categoria_id" class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-black border-gray-200">
+                {{-- <option value="">Categorias Tabla</option> --}}
+                @foreach($categorias as $cat)
+                  <option value="{{$cat->id}}">{{$cat->nombre}}</option>
+                @endforeach
+              </select>
+            </label>
+            <br>
+            <br>
+            <br>
+            <br>
+            
           </div>
   
         {{-- <div class="relative z-0 w-full mb-5">
@@ -182,4 +199,5 @@
 
 
 
-@endsection
+{{-- @endsection --}}
+  </x-app-layout>

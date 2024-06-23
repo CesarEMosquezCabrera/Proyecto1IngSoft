@@ -1,12 +1,13 @@
-@extends('layout.plantilla')
+{{-- @extends('layout.plantilla')
 
 @section('titulo','principal')
 
-@section('contenido')
+@section('contenido') --}}
 
 <!-- component -->
+<x-app-layout>
 
-<h1 class="text-3xl font-bold tracking-tight text-gray-900">Todofs los productos</h1>
+<h1 class="text-3xl font-bold tracking-tight text-gray-900">Todos los productos</h1>
 
     <div class="container m-auto size-11/12">
 <br>
@@ -62,4 +63,5 @@ route('producto.crear') }}">Nuevo registro</a></button>
    
 </ul>
 
-@endsection
+{{-- @endsection --}}
+</x-app-layout>

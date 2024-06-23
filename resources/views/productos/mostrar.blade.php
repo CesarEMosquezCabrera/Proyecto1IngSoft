@@ -1,8 +1,8 @@
-@extends('layout.plantilla')
+{{-- @extends('layout.plantilla')
 
 @section('titulo','mostrar')
 
-@section('contenido')
+@section('contenido') --}}
 
 {{-- <header class="bg-white shadow">
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
@@ -10,7 +10,7 @@
     </div>
 </header>  --}}
 <!-- component -->
-
+<x-app-layout>
 <div class="container size-11/12 m-auto">
   <div>
       <div class="px-4 sm:px-0">
@@ -34,6 +34,10 @@
           <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
             <dt class="text-sm font-medium leading-6 text-gray-900">Categoria</dt>
             <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{$producto->categoria}}</dd>
+          </div>
+          <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <dt class="text-sm font-medium leading-6 text-gray-900">Categoria de la tabla</dt>
+            <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{$producto->categoria_id}} - {{$producto->nombre}}</dd>
           </div>
         </dl>
       </div>
@@ -97,4 +101,5 @@
  --}}
 
         
-@endsection
+{{-- @endsection --}}
+    </x-app-layout>
