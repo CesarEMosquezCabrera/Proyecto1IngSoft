@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\inicioController;
 use App\Http\Controllers\productoController;
+use App\Http\Controllers\roleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,26 @@ Route::middleware([
     Route::get('/dashboard', function () {
     return view('dashboard');
     })->name('dashboard');
+
+    Route::controller(roleController::class)->group(function(){
+        route::get('roles', 'principal')->name('roles.principal');
+        route::get('roles/{variable}/mostrar', 'mostrar')->name('roles.mostrar');
+    
+        route::get('roles/crear', 'crear')->name('roles.crear');
+    
+        route::post('roles','store')->name('roles.store');
+    
+    
+        Route::get('roles/{producto}/edit', 'editar')->name('roles.editar');
+    
+        route::put('roles/{producto}', 'update')->name('roles.update');
+    
+        route::delete('roles/{id}', 'borrar')->name('roles.borrar');
+    
+        route::get('desactiva/{id}', 'desactivaproducto')->name('desactivapro');
+    
+        route::get('activa/{id}', 'activaproducto')->name('activapro');
+    });
 
     Route::controller(productoController::class)->group(function(){
 
