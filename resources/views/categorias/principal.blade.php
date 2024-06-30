@@ -7,13 +7,13 @@
 <!-- component -->
 <x-app-layout>
 
-    <h1 class="text-3xl font-bold tracking-tight text-gray-900">Todos los Roles</h1>
+    <h1 class="text-3xl font-bold tracking-tight text-gray-900">Todas las Categorias</h1>
     
         <div class="container m-auto size-11/12">
     <br>
     <button class="bg-blue-500 hover:bg-red-700 text-white font-bold
     py-1 px-2 border border-blue-500 rounded"><a href="{{
-    route('roles.crear') }}">Nuevo registro</a></button>
+    route('categorias.crear') }}">Nuevo registro</a></button>
         <br>
         <br>
     <table class="min-w-full border-collapse block md:table">
@@ -31,9 +31,9 @@
                 
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     <span class="inline-block w-1/3 md:hidden font-bold">Actions</span>
-                    <button class="bg-green-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 border border-green-500 rounded"><a href="{{ route('roles.mostrar',$produ->id)}}">Ver</a></button>
-                    <button class="bg-blue-500 hover:bg-pink-700 text-white font-bold py-1 px-2 border border-blue-500 rounded"><a href="{{route('roles.editar', $produ)}}">Editar</a></button>
-                    {{-- <form action="{{route('roles.borrar', $produ)}}" method="POST">
+                    <button class="bg-green-500 hover:bg-yellow-700 text-white font-bold py-1 px-2 border border-green-500 rounded"><a href="{{ route('categorias.mostrar',$produ->id)}}">Ver</a></button>
+                    <button class="bg-blue-500 hover:bg-pink-700 text-white font-bold py-1 px-2 border border-blue-500 rounded"><a href="{{route('categorias.editar', $produ)}}">Editar</a></button>
+                    {{-- <form action="{{route('categorias.borrar', $produ)}}" method="POST">
                         @method('delete')
                         @csrf
     
@@ -47,17 +47,17 @@
     @endif
                        
                       </form> --}}
-                      <form action="{{route('roles.borrar', $produ)}}" method="POST">
+                      <form action="{{route('categorias.borrar', $produ)}}" method="POST">
                         @method('delete')
                         @csrf
     
                         @if($produ->deleted_at)
-     <button type="submit" class="bg-orange-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-orange-500 rounded"><a href="{{route('activarol', $produ->id)}}">Activar</a></button>
+     <button type="submit" class="bg-orange-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-orange-500 rounded"><a href="{{route('activacat', $produ->id)}}">Activar</a></button>
                        <input type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded"
                          value="Borrar" onclick="if(!confirm('Desea eliminar a {{$produ->nombre}} ?')){return false}">
                     
                         @else
-    <button type="submit" class="bg-purple-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-purple-500 rounded"><a href="{{route('desactivarol', $produ->id)}}">Desactivar</a></button>
+    <button type="submit" class="bg-purple-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-purple-500 rounded"><a href="{{route('desactivacat', $produ->id)}}">Desactivar</a></button>
     @endif
                        
                       </form>

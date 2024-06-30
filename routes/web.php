@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\inicioController;
 use App\Http\Controllers\productoController;
+use App\Http\Controllers\categoriaController;
 use App\Http\Controllers\roleController;
+use App\Http\Controllers\profileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,8 +54,8 @@ Route::middleware([
     })->name('dashboard');
 
     Route::controller(roleController::class)->group(function(){
-        route::get('roles', 'principal')->name('roles.principal');
-        route::get('roles/{variable}/mostrar', 'mostrar')->name('roles.mostrar');
+        Route::get('roles', 'principal')->name('roles.principal');
+        Route::get('roles/{variable}/mostrar', 'mostrar')->name('roles.mostrar');
     
         route::get('roles/crear', 'crear')->name('roles.crear');
     
@@ -66,9 +68,9 @@ Route::middleware([
     
         route::delete('roles/{id}', 'borrar')->name('roles.borrar');
     
-        route::get('desactiva/{id}', 'desactivaproducto')->name('desactivapro');
+        route::get('desactivarROLES/{id}', 'desactivaroles')->name('desactivarol');
     
-        route::get('activa/{id}', 'activaproducto')->name('activapro');
+        route::get('activarROLES/{id}', 'activaroles')->name('activarol');
     });
 
     Route::controller(productoController::class)->group(function(){
@@ -91,6 +93,50 @@ Route::middleware([
         route::get('desactiva/{id}', 'desactivaproducto')->name('desactivapro');
     
         route::get('activa/{id}', 'activaproducto')->name('activapro');
+    });
+
+    Route::controller(categoriaController::class)->group(function(){
+
+        route::get('categoria', 'principal')->name('categorias.principal');
+    
+        route::get('categoria/{variable}/mostrar', 'mostrar')->name('categorias.mostrar');
+    
+        route::get('categoria/crear', 'crear')->name('categorias.crear');
+    
+        route::post('categoria','store')->name('categorias.store');
+    
+    
+        Route::get('categoria/{producto}/edit', 'editar')->name('categorias.editar');
+    
+        route::put('categoria/{producto}', 'update')->name('categorias.update');
+    
+        route::delete('categoria/{id}', 'borrar')->name('categorias.borrar');
+    
+        route::get('desactivaCC/{id}', 'desactivacategoria')->name('desactivacat');
+    
+        route::get('activaCC/{id}', 'activacategoria')->name('activacat');
+    });
+
+    Route::controller(profileController::class)->group(function(){
+
+        route::get('profiles', 'principal')->name('profiles.principal');
+    
+        route::get('profiles/{variable}/mostrar', 'mostrar')->name('profiles.mostrar');
+    
+        route::get('profiles/crear', 'crear')->name('profiles.crear');
+    
+        route::post('profiles','store')->name('profiles.store');
+    
+    
+        Route::get('profiles/{producto}/edit', 'editar')->name('profiles.editar');
+    
+        route::put('profiles/{producto}', 'update')->name('profiles.update');
+    
+        route::delete('profiles/{id}', 'borrar')->name('profiles.borrar');
+    
+        route::get('desactivarPerfile/{id}', 'desactivaprofiles')->name('desactivaprofile');
+    
+        route::get('activarPerfile/{id}', 'activaprofiles')->name('activaprofile');
     });
 });
 

@@ -21,24 +21,24 @@
                         {{ __('Productos') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                {{-- <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('producto.crear') }}" :active="request()->routeIs('producto.crear')">
                         {{ __('Registrar') }}
                     </x-nav-link>
-                </div>
+                </div> --}}
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link href="{{ route('roles.principal') }}" :active="request()->routeIs('roles.principal')">
                         {{ __('Roles') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('producto.crear') }}" :active="request()->routeIs('producto.crear')">
-                        {{ __('Perfiles') }}
+                    <x-nav-link href="{{ route('categorias.principal') }}" :active="request()->routeIs('categorias.principal')">
+                        {{ __('Categorias') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link href="{{ route('producto.crear') }}" :active="request()->routeIs('producto.crear')">
-                        {{ __('Categorias') }}
+                    <x-nav-link href="{{ route('profiles.principal') }}" :active="request()->routeIs('profiles.principal')">
+                        {{ __('Perfiles') }}
                     </x-nav-link>
                 </div>
             </div>

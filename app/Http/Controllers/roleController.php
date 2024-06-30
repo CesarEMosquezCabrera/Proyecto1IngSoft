@@ -19,10 +19,7 @@ class roleController extends Controller
         return view("roles.mostrar", compact('producto'));
     }
     public function editar(Role $producto){
-
-        $cat_id=$producto->categoria_id;
         return view("roles.editar", compact('producto'));
-        
     }
     public function update(Request $request, Role $producto)
     {
@@ -48,14 +45,14 @@ class roleController extends Controller
         return redirect()->route('roles.principal');
     }
 
-    public function desactivaproducto($id){
+    public function desactivaroles($id){
         $producto=Role::find($id);
         $producto->delete();
         return redirect()->route('roles.principal');
     }
 
     
-    public function activaproducto($id){
+    public function activaroles($id){
         $producto=Role::withTrashed()->find($id);
         $producto->restore($id);
         return redirect()->route('roles.principal');

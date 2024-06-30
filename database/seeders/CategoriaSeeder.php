@@ -10,6 +10,6 @@ class CategoriaSeeder extends Seeder
     public function run(): void
     {
   //llama a la clase Factory y crea 10 registros en la tabla usuarios
-        Categoria::factory(5)->create();
+        Categoria::factory(20)->create();
     }
 }
